@@ -1,0 +1,64 @@
+name: auth
+description: A new Flutter project.
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.19.2 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  
+  cupertino_icons: ^1.0.2
+  google_fonts: ^4.0.3
+  flutter_native_splash: ^2.2.18
+  get_it: ^7.2.0
+  get: ^4.6.5
+  liquid_swipe: ^3.0.0
+  smooth_page_indicator: ^1.0.1
+  flutter_otp_text_field: ^1.1.1
+  firebase_core: ^2.7.0
+  firebase_auth: ^4.2.9
+  line_awesome_flutter: ^2.0.0
+  cloud_firestore: ^4.4.4
+  google_nav_bar: ^5.0.6
+  line_icons: ^2.0.1
+  zoom_tap_animation: ^1.1.0
+  table_calendar: ^3.0.8
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter_native_splash:
+  color: "#f7f6f1"
+  color_dark: "#f7f6f1"
+  image: assets/images/yaara.jpg
+  image_dark: assets/images/yaara.jpg
+
+android_12:
+  image: assets/images/yaara.jpg
+  icon_background_color: "#f7f6f1"
+  image_dark: assets/images/yaara.jpg
+  icon_background_color_dark: "#272727"
+
+flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/onboarding_images/activity.JPG
+    - assets/images/onboarding_images/calender.JPG
+    - assets/images/onboarding_images/pmood.jpg
+    - assets/images/mood.jpg
+    - assets/images/moodtrack.JPG
+    - assets/images/one.jpg
+    - assets/images/second.jpg
+    - assets/images/welcome_images/welcome.png
+    - assets/logo/google-logo.png
+    - assets/images/dashboard/dash-person.jpeg
