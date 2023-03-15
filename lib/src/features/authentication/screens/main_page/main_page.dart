@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
-import '../../controllers/navbar_controller.dart';
 import '../Fitness/fitness.dart';
 import '../calender/calender.dart';
 import '../dashbaord/dashboard.dart';
@@ -22,7 +21,7 @@ class MainPage extends StatefulWidget {
       Dashboard(),
       HealthPage(),
       FitnessPage(),
-      Calender(),
+      Calendar(),
     ];
   int currentIndex = 0;
     void onTap(int index){

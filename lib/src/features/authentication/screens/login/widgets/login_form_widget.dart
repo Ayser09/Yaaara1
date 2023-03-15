@@ -7,10 +7,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-import '../../../../constants/sizes.dart';
-import '../../../../constants/text_strings.dart';
-import '../../controllers/signup_controller.dart';
-import '../forget_password/forget_password_options/forget_password_btn_widget.dart';
+import '../../../../../constants/sizes.dart';
+import '../../../../../constants/text_strings.dart';
+import '../../../controllers/signup_controller.dart';
+import '../../forget_password/forget_password_options/forget_password_btn_widget.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({

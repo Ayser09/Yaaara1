@@ -33,7 +33,7 @@ const String tRememberMe = "Remember Me";
 const String tAlreadyHaveAnAccount = "Already have an account?";
 const String tDontHaveAnAccount = "Don't have an account?";
 
-const String tFullName ="Full Name";
+const String tFullName ="UserName";
 const String tNext ="Next";
 const String tForgetPasswordTitle = "Use Email verification to reset";
 const String tResetViaEmail ="Reset via Email ";

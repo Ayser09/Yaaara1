@@ -61,7 +61,16 @@ class SignUpForm extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(onPressed: () {
                   if(_formKey.currentState!.validate()){
-                     SignUpController.instance.registerUser(controller.email.text.trim(), controller.password.text.trim());
+                    final user = UserModel(
+                      email: controller.email.text.trim(),
+                      password: controller.password.text.trim(),
+                      fullName: controller.fullname.text.trim(),
+                    );
+                    SignUpController.instance.createUser(user,controller.email.text.trim(), controller.password.text.trim());
+
+
+
+                     // SignUpController.instance.registerUser(controller.email.text.trim(), controller.password.text.trim());
 
                     //this code will store in collection instead of authentication
 /*
