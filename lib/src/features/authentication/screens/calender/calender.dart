@@ -1,5 +1,10 @@
+import 'package:auth/src/features/authentication/screens/calender/create_note/notes.dart';
 import 'package:auth/src/features/authentication/screens/calender/event.dart';
+import 'package:auth/src/features/authentication/screens/calender/planner.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:scaffold_gradient_background/scaffold_gradient_background.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class Calendar extends StatefulWidget {
@@ -33,10 +38,21 @@ class _CalendarState extends State<Calendar> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return ScaffoldGradientBackground(
+      gradient: LinearGradient(colors: [
+        Color(0xFF8EC5FC),
+        Color(0xFFE0C3FC),
+      ]),
       appBar: AppBar(
         title: Text("Calendar"),
         centerTitle: true,
+        leading: IconButton(
+          color: Colors.black,
+          onPressed: () {
+            Get.to(() => NotesScreen());
+          },
+          icon: Icon(Icons.next_plan_outlined),
+        ),
       ),
       body: Column(
         children: [
@@ -104,7 +120,7 @@ class _CalendarState extends State<Calendar> {
             ),
           ),
           ..._getEventsfromDay(selectedDay).map(
-                (Event event) => ListTile(
+            (Event event) => ListTile(
               title: Text(
                 event.title,
               ),
@@ -129,7 +145,6 @@ class _CalendarState extends State<Calendar> {
                 child: Text("Ok"),
                 onPressed: () {
                   if (_eventController.text.isEmpty) {
-
                   } else {
                     if (selectedEvents[selectedDay] != null) {
                       selectedEvents[selectedDay]?.add(
@@ -140,11 +155,10 @@ class _CalendarState extends State<Calendar> {
                         Event(title: _eventController.text)
                       ];
                     }
-
                   }
                   Navigator.pop(context);
                   _eventController.clear();
-                  setState((){});
+                  setState(() {});
                   return;
                 },
               ),

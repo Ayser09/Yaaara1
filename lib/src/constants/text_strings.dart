@@ -14,20 +14,20 @@ const String tOnBoardingTitle1 = "mood";
 const String tOnBoardingTitle2 = "activity";
 const String tOnBoardingTitle3 = "calender";
 
-const String tOnBoardingSubTitle1  = "mood";
-const String tOnBoardingSubTitle2 = "activity";
-const String tOnBoardingSubTitle3 = "calender";
+const String tOnBoardingSubTitle1  = "";
+const String tOnBoardingSubTitle2 = "";
+const String tOnBoardingSubTitle3 = "";
 
 const String tOnBoardingCounter1 = "1/3";
 const String tOnBoardingCounter2 = "2/3";
 const String tOnBoardingCounter3 = "3/3";
 
-const String tWelcomeTitle = "punchline for yaara";
-const String tWelcomeSubTitle = "punchline for yaara";
+const String tWelcomeTitle = "A promise from you to love yourself";
+const String tWelcomeSubTitle = "A promise from us to always be there for you!";
 
 const String tLoginTitle = "Welcome Back";
 const String tSignUpTitle = "Let's Get Started";
-const String tLoginSubTitle = "Improve whatever dimag kharab";
+const String tLoginSubTitle = "Hello Again, You've Been Missed";
 const String tSignUpSubTitle = "Create an account to get started";
 const String tRememberMe = "Remember Me";
 const String tAlreadyHaveAnAccount = "Already have an account?";
@@ -44,21 +44,20 @@ const String tOtpSubTitle ="Verfication";
 const String tOtpMessage ="Enter the verification code sent at ";
 
 //DASHBAORD SCREEN
-const String tDashbaordTitle ="Hey, Username";
+const String tDashbaordTitle ="";
 const String tDashbaordHeading ="Explore Feed";
 const String tDashbaordBannerTitle1 ="Mental Health";
 const String tDashbaordBannerTitle2 ="Nutrition/Health";
-const String tDashbaordBannerSubTitle ="Various other";
+const String tDashbaordBannerSubTitle ="Activities Panel";
 const String tDashbaordSearch ="Chatbot";
 const String tDashbaordButton ="View All";
-const String tDashbaordTopCourses ="Top Course/";
+const String tDashbaordTopCourses ="Top Preferences/";
 
 //Profile Screen
 const String tProfile ="Profile";
-const String tProfileHeading ="Profile email";
+const String tProfileHeading ="";
 const String tEditProfile ="Edit Profile";
-const String tLogoutDialogHeading ="Logout";
-const String tProfileSubHeading ="superAdmin@mail.com";
+const String tProfileSubHeading ="";
 
 
 

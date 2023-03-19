@@ -29,6 +29,9 @@ dependencies:
   zoom_tap_animation: ^1.1.0
   table_calendar: ^3.0.8
   shared_preferences: ^2.0.18
+  fluttertoast: ^8.2.1
+  scaffold_gradient_background: ^1.0.3+1
+  webview_flutter: ^3.0.0
 
 
 
@@ -53,13 +56,13 @@ flutter_lints: ^2.0.0
 flutter:
   uses-material-design: true
   assets:
-    - assets/images/onboarding_images/activity.JPG
-    - assets/images/onboarding_images/calender.JPG
-    - assets/images/onboarding_images/pmood.jpg
+    - assets/images/onboarding_images/activity.png
+    - assets/images/onboarding_images/calender.png
+    - assets/images/onboarding_images/pmood.png
     - assets/images/mood.jpg
     - assets/images/moodtrack.JPG
     - assets/images/one.jpg
     - assets/images/second.jpg
-    - assets/images/welcome_images/welcome.png
+    - assets/images/welcome_images/welcome.jpg
     - assets/logo/google-logo.png
     - assets/images/dashboard/dash-person.jpeg

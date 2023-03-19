@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:scaffold_gradient_background/scaffold_gradient_background.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 import '../../../../constants/colors.dart';
 import '../../../../constants/image_strings.dart';
@@ -22,10 +23,14 @@ class Dashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Scaffold(
+        child: ScaffoldGradientBackground(
+          gradient: LinearGradient(colors: [
+            Color(0xFF8EC5FC),
+            Color(0xFFE0C3FC),
+          ]),
       appBar: DashboardAppBar(),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(tDashboardPadding),
+
         child: Container(
           padding: EdgeInsets.all(tDashboardPadding),
           child: Column(

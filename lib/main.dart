@@ -27,19 +27,16 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      theme: TAppTheme.darkTheme,
-      darkTheme: TAppTheme.lightTheme,
-      themeMode: ThemeMode.dark,
-      defaultTransition: Transition.leftToRightWithFade,
-      transitionDuration: const Duration(milliseconds: 500),
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Center(
-          child: CircularProgressIndicator(),
-        ),
-      )
-      //welcome screen for yellow bg CircularProgressIndicator
-    );
+        theme: TAppTheme.darkTheme,
+        darkTheme: TAppTheme.lightTheme,
+        themeMode: ThemeMode.dark,
+        defaultTransition: Transition.leftToRightWithFade,
+        transitionDuration: const Duration(milliseconds: 500),
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          body: Center(
+            child: CircularProgressIndicator(),
+          ),
+        ));
   }
 }
-

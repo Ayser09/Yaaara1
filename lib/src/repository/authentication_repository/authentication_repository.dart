@@ -1,5 +1,6 @@
 import 'package:auth/src/features/authentication/screens/dashbaord/dashboard.dart';
 import 'package:auth/src/features/authentication/screens/main_page/main_page.dart';
+import 'package:auth/src/features/authentication/screens/on_boarding/on_boarding_screen.dart';
 import 'package:auth/src/features/authentication/screens/welcome/welcome_screen.dart';
 import 'package:auth/src/repository/authentication_repository/exceptions/signup_email_password_failure.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -22,7 +23,7 @@ class AuthenticationRepository extends GetxController {
   }
 
   _setInitialScreen(User? user) {
-    user == null ? Get.offAll(() => const WelcomeScreen()) : Get
+    user == null ? Get.offAll(() => OnBoardingScreen()) : Get
         .offAll(() => const MainPage());
   }
 
@@ -43,7 +44,7 @@ class AuthenticationRepository extends GetxController {
       await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       firebaseUser.value != null ? Get.offAll(() => const MainPage()) : Get
-          .offAll(() => const WelcomeScreen());
+          .offAll(() => OnBoardingScreen());
     } on FirebaseAuthException catch (e) {
       final ex = SignUpWithEmailAndPasswordFailure.code(e.code);
       print('FIREBASE AUTH EXCEPTION - ${ex.message}');
@@ -55,12 +56,6 @@ class AuthenticationRepository extends GetxController {
   }
 
   Future<void> loginWithEmailAndPassword(String email, String password)async{
-    /*
-    * verificationCompleted:(credential) async{
-    * await _auth.signInWithCredential(credential);
-    * }
-    *
-    * */
     try{
       await _auth.signInWithEmailAndPassword(email: email, password: password);
     }on FirebaseAuthException catch(e){}

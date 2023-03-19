@@ -6,6 +6,7 @@ import 'package:auth/src/features/authentication/screens/login/login_screen.dart
 import 'package:auth/src/features/authentication/screens/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:scaffold_gradient_background/scaffold_gradient_background.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -17,18 +18,21 @@ class WelcomeScreen extends StatelessWidget {
     var brightness = MediaQuery.platformBrightnessOf;
     final isDarkMode = brightness == Brightness.dark;
     return SafeArea(
-      child: Scaffold(
-        backgroundColor: isDarkMode ? tSecondaryColor : tPrimaryColor,
+      child: ScaffoldGradientBackground(
+        gradient: LinearGradient(colors: [
+          Color(0xFF8EC5FC),
+          Color(0xFFE0C3FC),
+        ]),
         body: Container(
           padding: EdgeInsets.all(tDefaultSize),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Image(image: AssetImage(tWelcomeScreenImage), height: height * 0.4),
+              Image(image: AssetImage(tWelcomeScreenImage), height: height * 0.5),
               Column(
                 children: [
                   Text(tWelcomeTitle,
-                      style: Theme.of(context).textTheme.displaySmall),
+                      style: Theme.of(context).textTheme.headline6),
                   Text(
                     tWelcomeSubTitle,
                     style: Theme.of(context).textTheme.headlineMedium,

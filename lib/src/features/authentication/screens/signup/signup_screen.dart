@@ -8,6 +8,7 @@ import 'package:auth/src/features/authentication/screens/signup/widgets/signup_f
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:scaffold_gradient_background/scaffold_gradient_background.dart';
 
 
 class SignUpScreen extends StatelessWidget {
@@ -16,7 +17,11 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
+      child: ScaffoldGradientBackground(
+        gradient: LinearGradient(colors: [
+          Color(0xFF8EC5FC),
+          Color(0xFFE0C3FC),
+        ]),
         body: SingleChildScrollView(
           child: Container(
             padding: const EdgeInsets.all(tDefaultSize),
@@ -37,7 +42,7 @@ class SignUpScreen extends StatelessWidget {
                           Get.to(() => const LoginScreen());
                         },
                         child: Text.rich(TextSpan(
-                          text: tDontHaveAnAccount,
+                          text: tAlreadyHaveAnAccount,
                           style: Theme.of(context).textTheme.bodyMedium,
                           children: [
                             TextSpan(

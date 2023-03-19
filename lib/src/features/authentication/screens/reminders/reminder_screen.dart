@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:scaffold_gradient_background/scaffold_gradient_background.dart';
 
 import '../profile/widgets/profile_menu.dart';
 class ReminderScreen extends StatelessWidget {
@@ -8,7 +9,14 @@ class ReminderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
+      child: ScaffoldGradientBackground(
+        gradient: LinearGradient(colors: [
+          Color(0xFF8EC5FC),
+          Color(0xFFE0C3FC),
+        ]),
+        appBar: AppBar(
+          title: Text("Reminders"),
+        ),
         body: Container(
           child: Column(
             children: [

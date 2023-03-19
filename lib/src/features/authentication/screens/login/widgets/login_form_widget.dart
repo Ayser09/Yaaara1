@@ -1,4 +1,3 @@
-import 'package:auth/src/features/authentication/controllers/login_controller.dart';
 import 'package:auth/src/features/authentication/screens/dashbaord/dashboard.dart';
 import 'package:auth/src/features/authentication/screens/forget_password/forget_password_mail/forget_password_mail.dart';
 import 'package:auth/src/features/authentication/screens/main_page/main_page.dart';
@@ -12,11 +11,17 @@ import '../../../../../constants/text_strings.dart';
 import '../../../controllers/signup_controller.dart';
 import '../../forget_password/forget_password_options/forget_password_btn_widget.dart';
 
-class LoginForm extends StatelessWidget {
+class LoginForm extends StatefulWidget {
   const LoginForm({
     super.key,
   });
 
+  @override
+  State<LoginForm> createState() => _LoginFormState();
+}
+
+class _LoginFormState extends State<LoginForm> {
+  bool passwordObscured = true;
   @override
   Widget build(BuildContext context) {
     final _formKey = GlobalKey<FormState>();
@@ -42,15 +47,18 @@ class LoginForm extends StatelessWidget {
             ),
             TextFormField(
               controller: passwordController,
+              obscureText: passwordObscured,
               decoration: InputDecoration(
-                prefixIcon: Icon(Icons.person_outline_outlined),
                 labelText: tPassword,
                 hintText: tPassword,
                 border: OutlineInputBorder(),
-                suffixIcon: IconButton(
-                  onPressed: null,
-                  icon: Icon(Icons.remove_red_eye_sharp),
-                ),
+                  prefixIcon: Icon(Icons.password),
+                  suffixIcon: IconButton(onPressed: () {
+                    setState(() {
+                      passwordObscured =! passwordObscured;
+                    });
+                  },
+                      icon: passwordObscured?  Icon(Icons.visibility_off) : Icon(Icons.visibility))
               ),
             ),
             SizedBox(

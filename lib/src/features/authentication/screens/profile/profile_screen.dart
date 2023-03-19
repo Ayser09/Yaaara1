@@ -8,6 +8,7 @@ import 'package:auth/src/repository/authentication_repository/authentication_rep
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
+import 'package:scaffold_gradient_background/scaffold_gradient_background.dart';
 
 import '../reminders/reminder_screen.dart';
 class ProfileScreen extends StatelessWidget {
@@ -16,7 +17,11 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var isDark= MediaQuery.of(context).platformBrightness == Brightness.dark;
-    return Scaffold(
+    return ScaffoldGradientBackground(
+      gradient: LinearGradient(colors: [
+        Color(0xFF8EC5FC),
+        Color(0xFFE0C3FC),
+      ]),
       appBar: AppBar(
         leading: IconButton(onPressed: ()=>Get.back(), icon: const Icon(LineAwesomeIcons.angle_left),),
         title: Text(tProfile, style: Theme.of(context).textTheme.headlineMedium),

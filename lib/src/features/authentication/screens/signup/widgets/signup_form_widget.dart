@@ -7,11 +7,17 @@ import 'package:get/get_core/src/get_main.dart';
 import '../../../../../constants/sizes.dart';
 import '../../../../../constants/text_strings.dart';
 
-class SignUpForm extends StatelessWidget {
+class SignUpForm extends StatefulWidget {
   const SignUpForm({
     super.key,
   });
 
+  @override
+  State<SignUpForm> createState() => _SignUpFormState();
+}
+
+class _SignUpFormState extends State<SignUpForm> {
+  bool passwordObscured = true;
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(SignUpController());
@@ -49,9 +55,16 @@ class SignUpForm extends StatelessWidget {
             ),
             TextFormField(
               controller: controller.password,
-              decoration: const InputDecoration(
+              obscureText: passwordObscured,
+              decoration:  InputDecoration(
                 label: Text(tPassword),
                 prefixIcon: Icon(Icons.password),
+                suffixIcon: IconButton(onPressed: () {
+                  setState(() {
+                    passwordObscured =! passwordObscured;
+                  });
+                },
+                    icon: passwordObscured?  Icon(Icons.visibility_off) : Icon(Icons.visibility))
               ),
             ),
             SizedBox(
