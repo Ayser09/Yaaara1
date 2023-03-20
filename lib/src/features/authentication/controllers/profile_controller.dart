@@ -14,7 +14,7 @@ static ProfileController get instance => Get.find();
 getUserData(){
    final email = _authRepo.firebaseUser.value?.email;
    if(email!= null){
-     _userRepo.getUserDetails(email);
+     return _userRepo.getUserDetails(email);
    }else{
      Get.snackbar("Error", "Login to continue");
    }

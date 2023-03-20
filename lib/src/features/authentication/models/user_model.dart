@@ -23,8 +23,8 @@ class UserModel{
     final data = document.data()!;
     return UserModel(
         id: document.id,
-        fullName: data["FullName"],
         email: data["Email"],
+        fullName: data["FullName"],
         password: data["Password"]);
   }
 }

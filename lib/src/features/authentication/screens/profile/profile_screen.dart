@@ -78,6 +78,7 @@ class ProfileScreen extends StatelessWidget {
               ProfileMenuWidget(title: 'Reminders', icon: Icons.notification_add_outlined, onPress: () {  Get.to(() => ReminderScreen());  }, endIcon: false, ),
               ProfileMenuWidget(title: 'Google Fit', icon: Icons.fitness_center, onPress: () {  }, endIcon: false, ),
               ProfileMenuWidget(title: 'Terms & Conditions', icon: Icons.add_alert, onPress: () {  }, endIcon: false, ),
+              ProfileMenuWidget(title: 'Hotline/HelpLine', icon: Icons.add_alert, onPress: () {  }, endIcon: false, ),
               Divider(color: Colors.grey),
               SizedBox(height: 10),
               ProfileMenuWidget(title: 'Logout',textColor: Colors.red ,icon: LineAwesomeIcons.alternate_sign_out,

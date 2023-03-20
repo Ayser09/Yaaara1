@@ -4,6 +4,7 @@ import 'package:auth/src/features/authentication/screens/welcome/welcome_screen.
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
+import 'package:scaffold_gradient_background/scaffold_gradient_background.dart';
 
 import '../../../../constants/colors.dart';
 import '../../../../constants/sizes.dart';
@@ -21,7 +22,11 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
   Widget build(BuildContext context) {
     //from where the data is coming make controller so using this controller call data inside future builder
     final controller = Get.put(ProfileController());
-    return Scaffold(
+    return ScaffoldGradientBackground(
+      gradient: LinearGradient(colors: [
+        Color(0xFF8EC5FC),
+        Color(0xFFE0C3FC),
+      ]),
       appBar: AppBar(
         leading: IconButton(
           onPressed: () => Get.back(),

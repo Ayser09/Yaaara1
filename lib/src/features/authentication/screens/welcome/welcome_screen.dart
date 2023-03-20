@@ -26,7 +26,7 @@ class WelcomeScreen extends StatelessWidget {
         body: Container(
           padding: EdgeInsets.all(tDefaultSize),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Image(image: AssetImage(tWelcomeScreenImage), height: height * 0.5),
               Column(

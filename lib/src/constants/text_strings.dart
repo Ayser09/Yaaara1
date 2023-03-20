@@ -10,9 +10,9 @@ const String tSignInWithGoogle = "Sign-In with Google";
 const String tAppName = "YAARA";
 const String tAppTagLine = "Your Amazing Yaara Companion App!";
 
-const String tOnBoardingTitle1 = "mood";
-const String tOnBoardingTitle2 = "activity";
-const String tOnBoardingTitle3 = "calender";
+const String tOnBoardingTitle1 = "";
+const String tOnBoardingTitle2 = "";
+const String tOnBoardingTitle3 = "";
 
 const String tOnBoardingSubTitle1  = "";
 const String tOnBoardingSubTitle2 = "";
