@@ -16,7 +16,7 @@ signUpUser(String userName, String userEmail, String userPassword)async{
       'userEmail': userEmail,
       'userPassword': userPassword,
       'createdAt': DateTime.now(),
-      'userId': userid!.uid,
+      'userId': userid.uid,
     }).then((value) =>{
       FirebaseAuth.instance.signOut(),
       Get.to(() => LoginScreen())

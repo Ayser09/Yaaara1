@@ -29,7 +29,6 @@ class SignUpController extends GetxController{
 
   Future <void> createUser(UserModel user, String email, String password) async{
     await userRepo.createUser(user);
-    Get.to(() => MainPage());
     String? error =
     AuthenticationRepository.instance.createUserWithEmailAndPassword(email, password) as String?;
     if (error !=  null){

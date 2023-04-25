@@ -7,40 +7,62 @@ import 'package:get/get.dart';
 class UserRepository extends GetxController {
   static UserRepository get instance => Get.find();
 
-    final _db = FirebaseFirestore.instance;
+  final _db = FirebaseFirestore.instance;
 
-    ///store user is firebase
-    createUser(UserModel user) async {
-     await _db.collection("Users").add(user.toJson()).whenComplete(
-              () => Get.snackbar("Success", "Your account has been created",
+  ///store user is firebase
+  Future<DocumentReference<Map<String, dynamic>>> createUser(
+      UserModel user) async {
+    return await _db
+        .collection("Users")
+        .add(user.toJson())
+        .whenComplete(() => Get.snackbar(
+              "Success",
+              "Your account has been created",
               snackPosition: SnackPosition.BOTTOM,
-                backgroundColor: Colors.green.withOpacity(0.1),
-                colorText: Colors.green,),
-              )
-         .catchError((error, stackTrace){
-                Get.snackbar("Failed", "Something went wrong. Try Again",
-                    snackPosition: SnackPosition.BOTTOM,
-                    backgroundColor: Colors.redAccent.withOpacity(0.1),
-                    colorText: Colors.red);
-                print("error -$error");
-              });
-     }
+              backgroundColor: Colors.green.withOpacity(0.1),
+              colorText: Colors.green,
+            ))
+        .catchError((error, stackTrace) {
+      Get.snackbar(
+        "Failed",
+        "Something went wrong. Try Again",
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: Colors.redAccent.withOpacity(0.1),
+        colorText: Colors.red,
+      );
+      print("error -$error");
+    });
+  }
 
-    Future<UserModel> getUserDetails(String email) async{
-      final snapshot = await _db.collection("Users").where("Email", isEqualTo: email).get();
-      //map data to conv fro  doc to list
-      final userData = snapshot.docs.map((e) => UserModel.fromSnapshot(e)).single;
-      return userData;
-    }
+  // createUser(UserModel user) async {
+  //  await _db.collection("Users").add(user.toJson()).whenComplete(
+  //           () => Get.snackbar("Success", "Your account has been created",
+  //           snackPosition: SnackPosition.BOTTOM,
+  //             backgroundColor: Colors.green.withOpacity(0.1),
+  //             colorText: Colors.green,),
+  //           )
+  //      .catchError((error, stackTrace){
+  //             Get.snackbar("Failed", "Something went wrong. Try Again",
+  //                 snackPosition: SnackPosition.BOTTOM,
+  //                 backgroundColor: Colors.redAccent.withOpacity(0.1),
+  //                 colorText: Colors.red);
+  //             print("error -$error");
+  //           });
+  //  }
 
-    Future<List<UserModel>> allDetails() async{
-      final snapshot = await _db.collection("Users").get();
-      //map data to conv fro  doc to list
-      final userData = snapshot.docs.map((e) => UserModel.fromSnapshot(e)).toList();
-      return userData;
-    }
+  Future<UserModel> getUserDetails(String email) async {
+    final snapshot =
+        await _db.collection("Users").where("Email", isEqualTo: email).get();
+    //map data to conv fro  doc to list
+    final userData = snapshot.docs.map((e) => UserModel.fromSnapshot(e)).single;
+    return userData;
+  }
 
-  // Future<List<UserModel>> allUser() {}
+  Future<List<UserModel>> allDetails() async {
+    final snapshot = await _db.collection("Users").get();
+    //map data to conv fro  doc to list
+    final userData =
+        snapshot.docs.map((e) => UserModel.fromSnapshot(e)).toList();
+    return userData;
+  }
 }
-
-

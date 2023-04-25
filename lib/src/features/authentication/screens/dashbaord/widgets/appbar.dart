@@ -16,11 +16,6 @@ class DashboardAppBar extends StatelessWidget implements PreferredSizeWidget{
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: IconButton(
-        color: Colors.black,
-        onPressed: () {  },
-        icon: Icon(Icons.menu),
-      ),
       title: Text(
         tAppName,
         style: Theme.of(context).textTheme.headlineMedium,

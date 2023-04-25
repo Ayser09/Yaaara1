@@ -18,6 +18,7 @@ class SignUpForm extends StatefulWidget {
 
 class _SignUpFormState extends State<SignUpForm> {
   bool passwordObscured = true;
+
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(SignUpController());
@@ -27,7 +28,6 @@ class _SignUpFormState extends State<SignUpForm> {
       padding: const EdgeInsets.all(tDefaultSize),
       child: Form(
         key: _formKey,
-
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -56,36 +56,40 @@ class _SignUpFormState extends State<SignUpForm> {
             TextFormField(
               controller: controller.password,
               obscureText: passwordObscured,
-              decoration:  InputDecoration(
-                label: Text(tPassword),
-                prefixIcon: Icon(Icons.password),
-                suffixIcon: IconButton(onPressed: () {
-                  setState(() {
-                    passwordObscured =! passwordObscured;
-                  });
-                },
-                    icon: passwordObscured?  Icon(Icons.visibility_off) : Icon(Icons.visibility))
-              ),
+              decoration: InputDecoration(
+                  label: Text(tPassword),
+                  prefixIcon: Icon(Icons.password),
+                  suffixIcon: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          passwordObscured = !passwordObscured;
+                        });
+                      },
+                      icon: passwordObscured
+                          ? Icon(Icons.visibility_off)
+                          : Icon(Icons.visibility))),
             ),
             SizedBox(
               height: tFormHeight - 20,
             ),
             SizedBox(
                 width: double.infinity,
-                child: ElevatedButton(onPressed: () {
-                  if(_formKey.currentState!.validate()){
-                    final user = UserModel(
-                      email: controller.email.text.trim(),
-                      password: controller.password.text.trim(),
-                      fullName: controller.fullname.text.trim(),
-                    );
-                    SignUpController.instance.createUser(user,controller.email.text.trim(), controller.password.text.trim());
+                child: ElevatedButton(
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        final user = UserModel(
+                          email: controller.email.text.trim(),
+                          password: controller.password.text.trim(),
+                          fullName: controller.fullname.text.trim(),
+                        );
+                        SignUpController.instance.createUser(
+                            user,
+                            controller.email.text.trim(),
+                            controller.password.text.trim());
 
+                        // SignUpController.instance.registerUser(controller.email.text.trim(), controller.password.text.trim());
 
-
-                     // SignUpController.instance.registerUser(controller.email.text.trim(), controller.password.text.trim());
-
-                    //this code will store in collection instead of authentication
+                        //this code will store in collection instead of authentication
 /*
 *                   var userName = userNameController.text.trim();
 *                   var userEmail = userEmailController.text.trim();
@@ -100,15 +104,14 @@ class _SignUpFormState extends State<SignUpForm> {
 *
 *
 * */
-                    // final user = UserModel(fullName: controller.fullname.text.trim(),
-                    //     email: controller.email.text.trim(),
-                    //     password: controller.password.text.trim()
-                    // );
-                    // SignUpController.instance.createUser(user);
-
-
-                  }
-                }, child: Text(tSignup)))
+                        // final user = UserModel(fullName: controller.fullname.text.trim(),
+                        //     email: controller.email.text.trim(),
+                        //     password: controller.password.text.trim()
+                        // );
+                        // SignUpController.instance.createUser(user);
+                      }
+                    },
+                    child: Text(tSignup)))
           ],
         ),
       ),
