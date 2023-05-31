@@ -8,6 +8,7 @@ import 'package:auth/src/features/authentication/screens/dashbaord/widgets/botto
 import 'package:auth/src/features/authentication/screens/dashbaord/widgets/categories.dart';
 import 'package:auth/src/features/authentication/screens/dashbaord/widgets/top_courses.dart';
 import 'package:auth/src/features/authentication/screens/health/health.dart';
+import 'package:auth/src/features/notification_services/notification_services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -17,10 +18,28 @@ import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 import '../../../../constants/colors.dart';
 import '../../../../constants/image_strings.dart';
 
-class Dashboard extends StatelessWidget {
+class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
 
   @override
+  State<Dashboard> createState() => _DashboardState();
+}
+
+class _DashboardState extends State<Dashboard> {
+  NotificationServices notificationServices = NotificationServices();
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    notificationServices.requestNotificationPermission();
+    notificationServices.firebaseInit(context);
+    notificationServices.setupInteractMessage(context);
+    notificationServices.getDeviceToken().then((value){
+      print("device token");
+      print(value);
+    });
+  }
+
   Widget build(BuildContext context) {
     return SafeArea(
         child: ScaffoldGradientBackground(

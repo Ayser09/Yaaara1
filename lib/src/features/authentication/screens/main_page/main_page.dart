@@ -17,7 +17,7 @@ class _MainPageState extends State<MainPage> {
   List pages = [
     Dashboard(),
     ChatScreen(),
-    HealthPage(),
+    // HealthPage(),
     FitnessPage(),
     Calendar(),
   ];
@@ -54,11 +54,11 @@ class _MainPageState extends State<MainPage> {
                   Icons.chat,
                 ),
                 label: "chatbot"),
-            BottomNavigationBarItem(
-                icon: Icon(
-                  LineIcons.heart,
-                ),
-                label: "Health"),
+            // BottomNavigationBarItem(
+            //     icon: Icon(
+            //       LineIcons.heart,
+            //     ),
+            //     label: "Health"),
             BottomNavigationBarItem(
                 icon: Icon(
                   LineIcons.barChart,

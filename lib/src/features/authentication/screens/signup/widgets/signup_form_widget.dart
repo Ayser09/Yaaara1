@@ -77,6 +77,9 @@ class _SignUpFormState extends State<SignUpForm> {
                 child: ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
+
+
+
                         final user = UserModel(
                           email: controller.email.text.trim(),
                           password: controller.password.text.trim(),
