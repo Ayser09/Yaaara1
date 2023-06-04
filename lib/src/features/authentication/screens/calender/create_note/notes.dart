@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:scaffold_gradient_background/scaffold_gradient_background.dart';
@@ -79,8 +80,18 @@ class _NotesScreenState extends State<NotesScreen> {
                             GestureDetector(
                                 onTap: ()async{
                                  await FirebaseFirestore.instance.collection("notes").doc(docId).delete();
+                                 Fluttertoast.showToast(
+                                   msg: 'Note added successfully',
+                                   toastLength: Toast.LENGTH_SHORT,
+                                   gravity: ToastGravity.BOTTOM,
+                                   timeInSecForIosWeb: 1,
+                                   backgroundColor: Colors.green,
+                                   textColor: Colors.white,
+                                 );
+
                                 },
                                 child: Icon(Icons.delete)),
+
                           ],
                         ),
                       ),

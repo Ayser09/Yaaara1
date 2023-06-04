@@ -20,24 +20,26 @@ class WelcomeScreen extends StatelessWidget {
     return SafeArea(
       child: ScaffoldGradientBackground(
         gradient: LinearGradient(colors: [
-          Color(0xFF8EC5FC),
-          Color(0xFFE0C3FC),
+          Color(0xffffdcbd),
+          Color(0xffffdcbd),
         ]),
         body: Container(
           padding: EdgeInsets.all(tDefaultSize),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Image(image: AssetImage(tWelcomeScreenImage), height: height * 0.5),
-              Column(
-                children: [
-                  Text(tWelcomeTitle,
-                      style: Theme.of(context).textTheme.headline6),
-                  Text(
-                    tWelcomeSubTitle,
-                    style: Theme.of(context).textTheme.headlineMedium,
-                  ),
-                ],
+              Image(
+                image: AssetImage(tWelcomeScreenImage),
+                height: height * 0.5,
+              ),
+              Text(tWelcomeTitle,
+                  style: Theme.of(context).textTheme.headlineSmall),
+              SizedBox(
+                height: height * 0.2,
+              ),
+              Text(
+                tWelcomeSubTitle,
+                style: Theme.of(context).textTheme.headlineSmall,
               ),
               Row(
                 children: [

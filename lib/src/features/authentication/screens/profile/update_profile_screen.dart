@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:scaffold_gradient_background/scaffold_gradient_background.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import '../../../../constants/colors.dart';
 import '../../../../constants/sizes.dart';
@@ -18,10 +19,22 @@ class UpdateProfileScreen extends StatefulWidget {
 }
 
 class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
+  final fullnameController = TextEditingController();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    fullnameController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    //from where the data is coming make controller so using this controller call data inside future builder
     final controller = Get.put(ProfileController());
+
     return ScaffoldGradientBackground(
       gradient: LinearGradient(colors: [
         Color(0xFF8EC5FC),
@@ -38,95 +51,110 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
         child: Container(
           padding: EdgeInsets.all(tDefaultSize),
           child: FutureBuilder(
-            //store data inside this future
             future: controller.getUserData(),
-            //we can add getAllUser() to view all the accounts present could do this for admin section to view all users watch video 15.30 19vid if needed
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.done) {
                 if (snapshot.hasData) {
-                  //to map data or pass data to user model so use it as initial values
                   UserModel userData = snapshot.data as UserModel;
+
+                  fullnameController.text = userData.fullName;
+                  emailController.text = userData.email;
+                  passwordController.text = userData.password;
+
                   return Column(
                     children: [
                       Stack(
                         children: [
-                          SizedBox(
-                            width: 120,
-                            height: 120,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(100),
-                              child: Icon(Icons.person),
-                            ),
-                          ),
-                          Positioned(
-                            bottom: 0,
-                            right: 0,
-                            child: Container(
-                                width: 35,
-                                height: 35,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(100),
-                                  color: tPrimaryColor,
-                                ),
-                                child: Icon(
-                                  LineAwesomeIcons.camera,
-                                  color: Colors.black,
-                                  size: 20.0,
-                                )),
-                          )
+                          // SizedBox(
+                          //   width: 120,
+                          //   height: 120,
+                          //   child: ClipRRect(
+                          //     borderRadius: BorderRadius.circular(100),
+                          //     child: Icon(Icons.person),
+                          //   ),
+                          // ),
+                          // Positioned(
+                          //   bottom: 0,
+                          //   right: 0,
+                          //   child: Container(
+                          //     width: 35,
+                          //     height: 35,
+                          //     decoration: BoxDecoration(
+                          //       borderRadius: BorderRadius.circular(100),
+                          //       color: tPrimaryColor,
+                          //     ),
+                          //     child:
+                          //     Icon(
+                          //       LineAwesomeIcons.camera,
+                          //       color: Colors.black,
+                          //       size: 20.0,
+                          //     ),
+                          //   ),
+                          // ),
                         ],
                       ),
                       SizedBox(height: 50),
                       Form(
-                          child: Column(
-                        children: [
-                          TextFormField(
-                            initialValue: userData.fullName,
-                            decoration: const InputDecoration(
-                              label: Text(tFullName),
-                              prefixIcon: Icon(Icons.person_outline_outlined),
-                            ),
-                          ),
-                          SizedBox(
-                            height: tFormHeight - 20,
-                          ),
-                          TextFormField(
-                            initialValue: userData.email,
-                            decoration: const InputDecoration(
-                              label: Text(tEmail),
-                              prefixIcon: Icon(
-                                Icons.email_outlined,
+                        child: Column(
+                          children: [
+                            TextFormField(
+                              controller: fullnameController,
+                              decoration: const InputDecoration(
+                                label: Text(tFullName),
+                                prefixIcon: Icon(Icons.person_outline_outlined),
                               ),
                             ),
-                          ),
-                          SizedBox(
-                            height: tFormHeight - 20,
-                          ),
-                          TextFormField(
-                            initialValue: userData.password,
-                            decoration: const InputDecoration(
-                              label: Text(tPassword),
-                              prefixIcon: Icon(Icons.password),
+                            SizedBox(height: tFormHeight - 20),
+                            TextFormField(
+                              controller: emailController,
+                              decoration: const InputDecoration(
+                                label: Text(tEmail),
+                                prefixIcon: Icon(Icons.email_outlined),
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            height: tFormHeight,
-                          ),
-                          SizedBox(
-                            width: double.infinity,
-                            child: ElevatedButton(
-                              onPressed: () =>
-                                  Get.to(() => UpdateProfileScreen()),
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: tPrimaryColor,
-                                  side: BorderSide.none,
-                                  shape: StadiumBorder()),
-                              child: Text(tEditProfile,
-                                  style: TextStyle(color: tDarkColor)),
+                            SizedBox(height: tFormHeight - 20),
+                            TextFormField(
+                              controller: passwordController,
+                              decoration: const InputDecoration(
+                                label: Text(tPassword),
+                                prefixIcon: Icon(Icons.password),
+                              ),
                             ),
-                          )
-                        ],
-                      ))
+                            SizedBox(height: tFormHeight),
+                            // SizedBox(
+                            //   width: double.infinity,
+                            //   child: ElevatedButton(
+                            //     onPressed: () async {
+                            //       final userData = UserModel(
+                            //         fullName: fullnameController.text.trim(),
+                            //         email: emailController.text.trim(),
+                            //         password: passwordController.text.trim(),
+                            //       );
+                            //       await controller.updateRecord(userData);
+                            //
+                            //       Fluttertoast.showToast(
+                            //         msg: 'Changes saved successfully',
+                            //         toastLength: Toast.LENGTH_SHORT,
+                            //         gravity: ToastGravity.BOTTOM,
+                            //         timeInSecForIosWeb: 1,
+                            //         backgroundColor: Colors.green,
+                            //         textColor: Colors.white,
+                            //       );
+                            //     },
+                            //     style: ElevatedButton.styleFrom(
+                            //       backgroundColor: tPrimaryColor,
+                            //       side: BorderSide.none,
+                            //       shape: StadiumBorder(),
+                            //     ),
+                            //     child: Text(
+                            //       "Save Changes",
+                            //       style: TextStyle(color: tDarkColor),
+                            //     ),
+                            //   ),
+                            // ),
+                          ],
+                        ),
+                      ),
                     ],
                   );
                 } else if (snapshot.hasError) {

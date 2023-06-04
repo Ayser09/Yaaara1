@@ -5,8 +5,13 @@ class UserModel{
   final String fullName;
   final String email;
   final String password;
-
-  const UserModel({this.id,required this.fullName,required this.email,required this.password,
+  // final String gender;
+  // final double weight;
+  // final double height;
+  // final String activityFactor;
+  // final String goalWeight;
+  // final String planToReach;
+  const UserModel( {this.id,required this.fullName,required this.email,required this.password,
 
 });
 
@@ -16,6 +21,12 @@ class UserModel{
       "FullName": fullName,
       "Email": email,
       "Password": password,
+      // "gender":gender,
+      // "weight":weight,
+      // "height":height,
+      // "activityFactor":activityFactor,
+      // "goalWeight":goalWeight,
+      // "planToReach":planToReach
     };
   }
 
@@ -23,9 +34,11 @@ class UserModel{
     final data = document.data()!;
     return UserModel(
         id: document.id,
-        email: data["Email"],
         fullName: data["FullName"],
-        password: data["Password"]);
+        email: data["Email"],
+        password: data["Password"],
+
+    );
   }
 }
 

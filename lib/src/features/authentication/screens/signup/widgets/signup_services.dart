@@ -26,3 +26,25 @@ signUpUser(String userName, String userEmail, String userPassword)async{
   }
 
 }
+// SignUpController.instance.registerUser(controller.email.text.trim(), controller.password.text.trim());
+
+//this code will store in collection instead of authentication
+/*
+*                   var userName = userNameController.text.trim();
+*                   var userEmail = userEmailController.text.trim();
+*                   var userPassword = userPasswordController.text.trim();
+*                   FirebaseAuth.instance.createUserWithEmailAndPassword(
+* email: userEmail, password:userPassword).then((value) =>{ log("usercreated"),
+* FirebaseFirestore.instance.collection("users").doc().set({
+* 'username': userNmae,
+* 'userEmail': userEmail,
+* 'userPassword':userPassword, }),
+* });
+*
+*
+* */
+// final user = UserModel(fullName: controller.fullname.text.trim(),
+//     email: controller.email.text.trim(),
+//     password: controller.password.text.trim()
+// );
+// SignUpController.instance.createUser(user);

@@ -42,6 +42,8 @@ dependencies:
   firebase_messaging: ^14.4.1
   flutter_local_notifications: ^14.0.0+1
   app_settings: ^4.2.0
+  url_launcher: ^6.1.11
+  flutter_svg: ^2.0.5
 
 
 
@@ -53,13 +55,13 @@ dev_dependencies:
 flutter_native_splash:
   color: "#f7f6f1"
   color_dark: "#f7f6f1"
-  image: assets/images/yaara.jpg
-  image_dark: assets/images/yaara.jpg
+  image: assets/images/welcome_images/welcome.png
+  image_dark: assets/images/welcome_images/welcome.png
 
 android_12:
-  image: assets/images/yaara.jpg
+  image: assets/images/welcome_images/welcome.png
   icon_background_color: "#f7f6f1"
-  image_dark: assets/images/yaara.jpg
+  image_dark: assets/images/welcome_images/welcome.png
   icon_background_color_dark: "#272727"
 
 flutter_lints: ^2.0.0
@@ -75,9 +77,19 @@ flutter:
     - assets/images/moodtrack.JPG
     - assets/images/one.jpg
     - assets/images/second.jpg
-    - assets/images/welcome_images/welcome.jpg
+    - assets/images/welcome_images/welcome.png
     - assets/logo/google-logo.png
     - assets/images/dashboard/dash-person.jpeg
     - assets/images/chatbot/chat_logo.png
     - assets/images/chatbot/openai_logo.jpg
     - assets/images/chatbot/person.png
+    - assets/page-1/images/pulse.png
+    - assets/page-1/images/jump-rope-and-dumbbell-for-workout.png
+    - assets/page-1/images/desk-calendar-with-smiley-face-and-good-mood.png
+    - assets/page-1/images/game-console-with-game-icons.png
+    - assets/page-1/images/calendar.png
+    - assets/page-1/images/ci-heart-outline.png
+    - assets/page-1/images/pink-and-blue-phone-icon.png
+    - assets/page-1/images/bubbleimg.png
+    - assets/page-1/images/vector.png
+    - assets/page-1/images/message-circle.png

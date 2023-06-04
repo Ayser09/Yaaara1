@@ -18,12 +18,12 @@ const String tOnBoardingSubTitle1  = "";
 const String tOnBoardingSubTitle2 = "";
 const String tOnBoardingSubTitle3 = "";
 
-const String tOnBoardingCounter1 = "1/3";
-const String tOnBoardingCounter2 = "2/3";
-const String tOnBoardingCounter3 = "3/3";
+const String tOnBoardingCounter1 = "";
+const String tOnBoardingCounter2 = "";
+const String tOnBoardingCounter3 = "";
 
-const String tWelcomeTitle = "A promise from you to love yourself";
-const String tWelcomeSubTitle = "A promise from us to always be there for you!";
+const String tWelcomeTitle = "A promise from you to love yourself   A promise from us to always be there for you!";
+const String tWelcomeSubTitle = "";
 
 const String tLoginTitle = "Welcome Back";
 const String tSignUpTitle = "Let's Get Started";
@@ -56,7 +56,7 @@ const String tDashbaordTopCourses ="Top Preferences/";
 //Profile Screen
 const String tProfile ="Profile";
 const String tProfileHeading ="";
-const String tEditProfile ="Edit Profile";
+const String tEditProfile ="Profile Information";
 const String tProfileSubHeading ="";
 
 

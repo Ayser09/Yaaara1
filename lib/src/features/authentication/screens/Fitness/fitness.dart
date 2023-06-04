@@ -65,7 +65,7 @@ class _FitnessPageState extends State<FitnessPage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    getRecipes("Ladoo");
+    getRecipes("Butter Chicken Gravy Recipes");
   }
 
   @override

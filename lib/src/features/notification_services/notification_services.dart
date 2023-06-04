@@ -105,7 +105,7 @@ class NotificationServices {
       _flutterLocalNotificationsPlugin.show(
           0,
           message.notification!.title.toString(),
-          message.notification!.title.toString(),
+          message.notification!.body.toString(),
           notificationDetails);
     });
   }

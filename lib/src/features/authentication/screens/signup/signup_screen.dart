@@ -4,6 +4,7 @@ import 'package:auth/src/constants/image_strings.dart';
 import 'package:auth/src/constants/sizes.dart';
 import 'package:auth/src/constants/text_strings.dart';
 import 'package:auth/src/features/authentication/screens/login/login_screen.dart';
+import 'package:auth/src/features/authentication/screens/profile_form_screen/profile_form_screen.dart';
 import 'package:auth/src/features/authentication/screens/signup/widgets/signup_form_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -39,7 +40,7 @@ class SignUpScreen extends StatelessWidget {
                   children: [
                     TextButton(
                         onPressed: () {
-                          Get.to(() => const LoginScreen());
+                          Get.to(() => ProfileFormScreen());
                         },
                         child: Text.rich(TextSpan(
                           text: tAlreadyHaveAnAccount,

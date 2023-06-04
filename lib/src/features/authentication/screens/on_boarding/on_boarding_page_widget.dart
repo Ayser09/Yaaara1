@@ -16,7 +16,7 @@ class OnBoardingPageWidget extends StatelessWidget {
     return SafeArea(
       child: Container(
         // padding: const EdgeInsets.all(tDefaultSize),
-        color: model.bgColor,
+        // color: model.bgColor,
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.max,     // by defaults it sets so no need to change
@@ -24,13 +24,13 @@ class OnBoardingPageWidget extends StatelessWidget {
 
           children: [
             Image(image: AssetImage(model.image), height: model.height * 0.8,),
-            Column(
-              children: [
-                Text(model.title, style: Theme.of(context).textTheme.headlineLarge,),
-                Text(model.subTitle, textAlign: TextAlign.center,),
-              ],
-            ),
-            Text(model.CounterText, style: Theme.of(context).textTheme.headlineMedium,),
+            // Column(
+            //   children: [
+            //     Text(model.title, style: Theme.of(context).textTheme.headlineLarge,),
+            //     Text(model.subTitle, textAlign: TextAlign.center,),
+            //   ],
+            // ),
+            // Text(model.CounterText, style: Theme.of(context).textTheme.headlineMedium,),
             // SizedBox(height: 50.0,)
           ],
         ),

@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:auth/src/features/authentication/screens/chatbot/chat_screen.dart';
+import 'package:auth/src/features/authentication/screens/dashbaord/page-1/home.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import '../Fitness/fitness.dart';
@@ -20,6 +23,7 @@ class _MainPageState extends State<MainPage> {
     // HealthPage(),
     FitnessPage(),
     Calendar(),
+    // HomeScene(),
   ];
   int currentIndex = 0;
 
@@ -69,6 +73,11 @@ class _MainPageState extends State<MainPage> {
                   LineIcons.calendar,
                 ),
                 label: "Calender"),
+            //     BottomNavigationBarItem(
+            //     icon: Icon(
+            //       LineIcons.phoenixFramework,
+            //     ),
+            //     label: "Homepage"),
           ],
         ));
   }

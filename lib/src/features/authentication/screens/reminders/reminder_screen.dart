@@ -21,7 +21,7 @@ class ReminderScreen extends StatelessWidget {
           child: Column(
             children: [
               ProfileMenuWidget(title: 'MEDITATION REMINDERS', icon: Icons.snowshoeing, onPress: () {  }, endIcon: false, ),
-              ProfileMenuWidget(title: 'WAKEUP REMINDERS', icon: Icons.alarm, onPress: () {  }, endIcon: false, ),
+              // ProfileMenuWidget(title: 'WAKEUP REMINDERS', icon: Icons.alarm, onPress: () {  }, endIcon: false, ),
             ],
           ),
         ),
