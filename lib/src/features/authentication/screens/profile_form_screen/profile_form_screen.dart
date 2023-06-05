@@ -332,7 +332,7 @@ class _ProfileFormScreenState extends State<ProfileFormScreen> {
                     _activityFactor = newValue;
                   });
                 },
-                items: ['A', 'B', 'C', 'D'].map((factor) {
+                items: ['Physical Activities', 'Mental Stimulation', 'Emotional Well-being', 'Relaxation and Joy'].map((factor) {
                   return DropdownMenuItem<String>(
                     value: factor,
                     child: Text(factor),

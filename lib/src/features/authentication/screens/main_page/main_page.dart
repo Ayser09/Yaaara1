@@ -18,12 +18,12 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   List pages = [
-    Dashboard(),
+    HomeScene(),
     ChatScreen(),
     // HealthPage(),
     FitnessPage(),
     Calendar(),
-    // HomeScene(),
+
   ];
   int currentIndex = 0;
 
@@ -73,11 +73,7 @@ class _MainPageState extends State<MainPage> {
                   LineIcons.calendar,
                 ),
                 label: "Calender"),
-            //     BottomNavigationBarItem(
-            //     icon: Icon(
-            //       LineIcons.phoenixFramework,
-            //     ),
-            //     label: "Homepage"),
+
           ],
         ));
   }

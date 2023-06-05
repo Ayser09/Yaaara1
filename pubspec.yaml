@@ -44,6 +44,12 @@ dependencies:
   app_settings: ^4.2.0
   url_launcher: ^6.1.11
   flutter_svg: ^2.0.5
+  intl: ^0.17.0
+#  flutter_swiper: ^1.1.6
+  assets_audio_player: ^3.0.6
+  flutter_page_indicator: ^0.0.3
+  transformer_page_view: ^0.1.6
+  carousel_slider: ^4.2.1
 
 
 
@@ -51,6 +57,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
 
 flutter_native_splash:
   color: "#f7f6f1"
@@ -83,13 +90,23 @@ flutter:
     - assets/images/chatbot/chat_logo.png
     - assets/images/chatbot/openai_logo.jpg
     - assets/images/chatbot/person.png
+    - assets/page-1/images/man-and-woman-sitting-at-the-cafe-and-talking.png
+    - assets/page-1/images/employees-working-on-task-management.png
+    - assets/page-1/images/woman-riding-a-skateboard.png
     - assets/page-1/images/pulse.png
-    - assets/page-1/images/jump-rope-and-dumbbell-for-workout.png
+    - assets/page-1/images/woman-meditating-on-a-ball.png
     - assets/page-1/images/desk-calendar-with-smiley-face-and-good-mood.png
+    - assets/page-1/images/jump-rope-and-dumbbell-for-workout.png
     - assets/page-1/images/game-console-with-game-icons.png
-    - assets/page-1/images/calendar.png
-    - assets/page-1/images/ci-heart-outline.png
-    - assets/page-1/images/pink-and-blue-phone-icon.png
     - assets/page-1/images/bubbleimg.png
-    - assets/page-1/images/vector.png
-    - assets/page-1/images/message-circle.png
+    - assets/images/creative.png
+    - assets/images/otdoor.png
+    - assets/images/social.png
+    - assets/images/relax.png
+    - assets/images/
+    - assets/audio/
+
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/Montserrat-Bold.ttf

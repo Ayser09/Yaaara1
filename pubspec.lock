@@ -41,6 +41,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.4.0"
+  assets_audio_player:
+    dependency: "direct main"
+    description:
+      name: assets_audio_player
+      sha256: dcea8cd9c11cd9c34586f2446bfcdf099362159c56f97517ba941ac151974ea9
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.6"
+  assets_audio_player_web:
+    dependency: transitive
+    description:
+      name: assets_audio_player_web
+      sha256: "4575ec40033d818ff022d48f7d46e24c01bc632bd1cd36a4f8b58b38e9aa4a81"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.6"
   async:
     dependency: transitive
     description:
@@ -65,6 +81,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+  carousel_slider:
+    dependency: "direct main"
+    description:
+      name: carousel_slider
+      sha256: "9c695cc963bf1d04a47bd6021f68befce8970bcd61d24938e1fb0918cf5d9c42"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.2.1"
   characters:
     dependency: transitive
     description:
@@ -319,6 +343,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.1"
+  flutter_page_indicator:
+    dependency: "direct main"
+    description:
+      name: flutter_page_indicator
+      sha256: a5b2992228c2827b69faed3977681a3f5c313c7f13d72272decbb2923d1d7176
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.3"
   flutter_spinkit:
     dependency: "direct main"
     description:
@@ -418,7 +450,7 @@ packages:
     source: hosted
     version: "4.0.15"
   intl:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: intl
       sha256: "910f85bce16fb5c6f614e117efa303e85a1731bb0081edf3604a2ae6e9a3cc91"
@@ -601,6 +633,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.5"
+  rxdart:
+    dependency: transitive
+    description:
+      name: rxdart
+      sha256: "0c7c0cedd93788d996e33041ffecda924cc54389199cde4e6a34b440f50044cb"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.27.7"
   scaffold_gradient_background:
     dependency: "direct main"
     description:
@@ -750,6 +790,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.9.2"
+  transformer_page_view:
+    dependency: "direct main"
+    description:
+      name: transformer_page_view
+      sha256: "2210531bc4148831061c575070173f32693415be8bbbf5bd2159a38f2adff61c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.6"
   typed_data:
     dependency: transitive
     description:
@@ -830,6 +878,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.6"
+  uuid:
+    dependency: transitive
+    description:
+      name: uuid
+      sha256: "648e103079f7c64a36dc7d39369cabb358d377078a051d6ae2ad3aa539519313"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.7"
   vector_graphics:
     dependency: transitive
     description:
