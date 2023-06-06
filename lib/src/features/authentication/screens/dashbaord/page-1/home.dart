@@ -7,6 +7,7 @@ import '../../activity/activity_screen.dart';
 import '../../calender/create_note/notes.dart';
 import '../../chatbot/chat_screen.dart';
 import '../../health/health.dart';
+import '../../suggestions/suggestions.dart';
 import '../widgets/appbar.dart';
 
 class HomeScene extends StatelessWidget {
@@ -68,17 +69,17 @@ class HomeScene extends StatelessWidget {
                     },
                   ),
                 ),
-                // Expanded(
-                //   child: buildFunctionBox(
-                //     context,
-                //     'Insights',
-                //     'assets/page-1/images/pulse.png',
-                //         () {
-                //       // Add your onPress function here
-                //       print('Pressed Insights');
-                //     },
-                //   ),
-                // ),
+                Expanded(
+                  child: buildFunctionBox(
+                    context,
+                    'Video Suggestions',
+                    'assets/page-1/images/pulse.png',
+                        () {
+                          Get.to(() => SuggHomeScreen());
+                      print('Pressed Insights');
+                    },
+                  ),
+                ),
                 Expanded(
                   child: buildFunctionBox(
                     context,
@@ -109,7 +110,7 @@ class HomeScene extends StatelessWidget {
       child: Container(
         margin: EdgeInsets.all(16.0),
         decoration: BoxDecoration(
-          color: Color(0xffffdcbd),
+          color: Color(0xffe8e3fc),
           borderRadius: BorderRadius.circular(8.0),
         ),
         child: Row(
