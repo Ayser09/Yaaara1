@@ -3,6 +3,7 @@ import 'package:scaffold_gradient_background/scaffold_gradient_background.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Event {
   final String id;
@@ -94,6 +95,15 @@ class _CalendarState extends State<Calendar> {
     // Clear the text field and update the UI
     _eventController.clear();
     setState(() {});
+
+    Fluttertoast.showToast(
+      msg: 'Event added successfully',
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.BOTTOM,
+      timeInSecForIosWeb: 1,
+      backgroundColor: Colors.green,
+      textColor: Colors.white,
+    );
   }
 
   Future<void> _editEvent(String eventId) async {
@@ -114,6 +124,15 @@ class _CalendarState extends State<Calendar> {
     // Clear the text field and update the UI
     _eventController.clear();
     setState(() {});
+
+    Fluttertoast.showToast(
+      msg: 'Event updated successfully',
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.BOTTOM,
+      timeInSecForIosWeb: 1,
+      backgroundColor: Colors.blue,
+      textColor: Colors.white,
+    );
   }
 
   Future<void> _deleteEvent(String eventId) async {
@@ -126,6 +145,15 @@ class _CalendarState extends State<Calendar> {
     // Clear the text field and update the UI
     _eventController.clear();
     setState(() {});
+
+    Fluttertoast.showToast(
+      msg: 'Event deleted successfully',
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.BOTTOM,
+      timeInSecForIosWeb: 1,
+      backgroundColor: Colors.red,
+      textColor: Colors.white,
+    );
   }
 
   @override

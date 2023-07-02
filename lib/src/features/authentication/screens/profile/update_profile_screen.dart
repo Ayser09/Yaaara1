@@ -65,32 +65,31 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                     children: [
                       Stack(
                         children: [
-                          // SizedBox(
-                          //   width: 120,
-                          //   height: 120,
-                          //   child: ClipRRect(
-                          //     borderRadius: BorderRadius.circular(100),
-                          //     child: Icon(Icons.person),
-                          //   ),
-                          // ),
-                          // Positioned(
-                          //   bottom: 0,
-                          //   right: 0,
-                          //   child: Container(
-                          //     width: 35,
-                          //     height: 35,
-                          //     decoration: BoxDecoration(
-                          //       borderRadius: BorderRadius.circular(100),
-                          //       color: tPrimaryColor,
-                          //     ),
-                          //     child:
-                          //     Icon(
-                          //       LineAwesomeIcons.camera,
-                          //       color: Colors.black,
-                          //       size: 20.0,
-                          //     ),
-                          //   ),
-                          // ),
+                          SizedBox(
+                            width: 120,
+                            height: 120,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(100),
+                              child: Icon(Icons.person),
+                            ),
+                          ),
+                          Positioned(
+                            bottom: 0,
+                            right: 0,
+                            child: Container(
+                              width: 35,
+                              height: 35,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(100),
+                                color: tPrimaryColor,
+                              ),
+                              child: Icon(
+                                LineAwesomeIcons.camera,
+                                color: Colors.black,
+                                size: 20.0,
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                       SizedBox(height: 50),
@@ -121,37 +120,37 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                               ),
                             ),
                             SizedBox(height: tFormHeight),
-                            // SizedBox(
-                            //   width: double.infinity,
-                            //   child: ElevatedButton(
-                            //     onPressed: () async {
-                            //       final userData = UserModel(
-                            //         fullName: fullnameController.text.trim(),
-                            //         email: emailController.text.trim(),
-                            //         password: passwordController.text.trim(),
-                            //       );
-                            //       await controller.updateRecord(userData);
-                            //
-                            //       Fluttertoast.showToast(
-                            //         msg: 'Changes saved successfully',
-                            //         toastLength: Toast.LENGTH_SHORT,
-                            //         gravity: ToastGravity.BOTTOM,
-                            //         timeInSecForIosWeb: 1,
-                            //         backgroundColor: Colors.green,
-                            //         textColor: Colors.white,
-                            //       );
-                            //     },
-                            //     style: ElevatedButton.styleFrom(
-                            //       backgroundColor: tPrimaryColor,
-                            //       side: BorderSide.none,
-                            //       shape: StadiumBorder(),
-                            //     ),
-                            //     child: Text(
-                            //       "Save Changes",
-                            //       style: TextStyle(color: tDarkColor),
-                            //     ),
-                            //   ),
-                            // ),
+                            SizedBox(
+                              width: double.infinity,
+                              child: ElevatedButton(
+                                onPressed: () async {
+                                  final userData = UserModel(
+                                    fullName: fullnameController.text.trim(),
+                                    email: emailController.text.trim(),
+                                    password: passwordController.text.trim(),
+                                  );
+                                  await controller.updateRecord(userData);
+
+                                  Fluttertoast.showToast(
+                                    msg: 'Changes saved successfully',
+                                    toastLength: Toast.LENGTH_SHORT,
+                                    gravity: ToastGravity.BOTTOM,
+                                    timeInSecForIosWeb: 1,
+                                    backgroundColor: Colors.green,
+                                    textColor: Colors.white,
+                                  );
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: tPrimaryColor,
+                                  side: BorderSide.none,
+                                  shape: StadiumBorder(),
+                                ),
+                                child: Text(
+                                  "Save Changes",
+                                  style: TextStyle(color: tDarkColor),
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                       ),

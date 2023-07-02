@@ -57,7 +57,7 @@ class _SessionState extends State<Session> {
           initExercise(counter);
         } else {
           setState(() {
-            exerciseName = "Relax for 40secs";
+            exerciseName = "Relax";
             imageName = "assets/images/Break.png";
             time -= 1;
           });

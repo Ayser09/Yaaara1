@@ -1,3 +1,4 @@
+import 'package:email_validator/email_validator.dart';
 import 'package:auth/src/features/authentication/screens/dashbaord/dashboard.dart';
 import 'package:auth/src/features/authentication/screens/forget_password/forget_password_mail/forget_password_mail.dart';
 import 'package:auth/src/features/authentication/screens/main_page/main_page.dart';
@@ -44,6 +45,9 @@ class _LoginFormState extends State<LoginForm> {
               validator: (value) {
                 if (value!.isEmpty) {
                   return 'Please enter your email';
+                }
+                if (!EmailValidator.validate(value)) {
+                  return 'Please enter a valid email';
                 }
                 return null;
               },

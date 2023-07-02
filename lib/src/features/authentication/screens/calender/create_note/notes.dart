@@ -78,19 +78,20 @@ class _NotesScreenState extends State<NotesScreen> {
                               width: 10.0,
                             ),
                             GestureDetector(
-                                onTap: ()async{
-                                 await FirebaseFirestore.instance.collection("notes").doc(docId).delete();
-                                 Fluttertoast.showToast(
-                                   msg: 'Note added successfully',
-                                   toastLength: Toast.LENGTH_SHORT,
-                                   gravity: ToastGravity.BOTTOM,
-                                   timeInSecForIosWeb: 1,
-                                   backgroundColor: Colors.green,
-                                   textColor: Colors.white,
-                                 );
+                              onTap: () async {
+                                await FirebaseFirestore.instance.collection("notes").doc(docId).delete();
+                                Fluttertoast.showToast(
+                                  msg: 'Note deleted successfully',
+                                  toastLength: Toast.LENGTH_SHORT,
+                                  gravity: ToastGravity.BOTTOM,
+                                  timeInSecForIosWeb: 1,
+                                  backgroundColor: Colors.red, // Set the background color to red for deletion
+                                  textColor: Colors.white,
+                                );
+                              },
+                              child: Icon(Icons.delete),
+                            )
 
-                                },
-                                child: Icon(Icons.delete)),
 
                           ],
                         ),
