@@ -3,10 +3,6 @@ import 'package:auth/src/constants/text_strings.dart';
 import 'package:auth/src/features/authentication/screens/Fitness/fitness.dart';
 import 'package:auth/src/features/authentication/screens/calender/calender.dart';
 import 'package:auth/src/features/authentication/screens/dashbaord/widgets/appbar.dart';
-import 'package:auth/src/features/authentication/screens/dashbaord/widgets/banners.dart';
-import 'package:auth/src/features/authentication/screens/dashbaord/widgets/bottom_navbar.dart';
-import 'package:auth/src/features/authentication/screens/dashbaord/widgets/categories.dart';
-import 'package:auth/src/features/authentication/screens/dashbaord/widgets/top_courses.dart';
 import 'package:auth/src/features/authentication/screens/health/health.dart';
 import 'package:auth/src/features/notification_services/notification_services.dart';
 import 'package:flutter/material.dart';
@@ -47,25 +43,25 @@ class _DashboardState extends State<Dashboard> {
             Color(0xFF8EC5FC),
             Color(0xFFE0C3FC),
           ]),
-      appBar: DashboardAppBar(),
-      body: SingleChildScrollView(
+          appBar: DashboardAppBar(),
+          body: SingleChildScrollView(
 
-        child: Container(
-          padding: EdgeInsets.all(tDashboardPadding),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                tDashbaordTitle,
-                style: Theme.of(context).textTheme.headlineMedium,
-              ),
-              Text(
-                tDashbaordHeading,
-                style: Theme.of(context).textTheme.headlineSmall,
-              ),
-              SizedBox(
-                height: tDashboardPadding,
-              ),
+            child: Container(
+              padding: EdgeInsets.all(tDashboardPadding),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    tDashbaordTitle,
+                    style: Theme.of(context).textTheme.headlineMedium,
+                  ),
+                  Text(
+                    tDashbaordHeading,
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  ),
+                  SizedBox(
+                    height: tDashboardPadding,
+                  ),
 
 //ChatBot search
 //               Container(
@@ -90,78 +86,33 @@ class _DashboardState extends State<Dashboard> {
 //                   ],
 //                 ),
 //               ),
-              SizedBox(
-                height: tDashboardPadding,
-              ),
+                  SizedBox(
+                    height: tDashboardPadding,
+                  ),
 //WATCH VIDEO FROM 30MINS FOR BUILDER METHOD ONCE DESIGNED CREATE MODEL
 //categories
-              CategoriesWidget(),
-              SizedBox(
-                height: tDashboardPadding,
-              ),
+
+                  SizedBox(
+                    height: tDashboardPadding,
+                  ),
 
 //bannerr
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: tCardBgColor),
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Flexible(
-                                  child: Icon(Icons.bookmark_add_outlined)),
-                              Flexible(child: Icon(Icons.badge_outlined)),
-//add BAnner image
-                            ],
-                          ),
-                          SizedBox(
-                            height: 25,
-                          ),
-                          Text(
-                            tDashbaordBannerTitle1,
-                            style: Theme.of(context).textTheme.headlineSmall,
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                          Text(
-                            tDashbaordBannerSubTitle,
-                            style: Theme.of(context).textTheme.headlineSmall,
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  Expanded(
-                    child: Column(
-                      children: [
-                        Container(
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: Container(
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               color: tCardBgColor),
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 10, vertical: 20),
+                          padding:
+                          EdgeInsets.symmetric(horizontal: 10, vertical: 20),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Flexible(
                                       child: Icon(Icons.bookmark_add_outlined)),
@@ -169,43 +120,88 @@ class _DashboardState extends State<Dashboard> {
 //add BAnner image
                                 ],
                               ),
+                              SizedBox(
+                                height: 25,
+                              ),
                               Text(
                                 tDashbaordBannerTitle1,
-                                style: Theme.of(context).textTheme.bodyLarge,
-                                maxLines: 1,
+                                style: Theme.of(context).textTheme.headlineSmall,
+                                maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                               ),
                               Text(
                                 tDashbaordBannerSubTitle,
-                                style: Theme.of(context).textTheme.bodyMedium,
+                                style: Theme.of(context).textTheme.headlineSmall,
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                               )
                             ],
                           ),
                         ),
-                        SizedBox(
-                            width: double.infinity,
-                            child: OutlinedButton(
-                                onPressed: () {},
-                                child: Text(tDashbaordButton))),
-                      ],
-                    ),
+                      ),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Expanded(
+                        child: Column(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: tCardBgColor),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 20),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Flexible(
+                                          child: Icon(Icons.bookmark_add_outlined)),
+                                      Flexible(child: Icon(Icons.badge_outlined)),
+//add BAnner image
+                                    ],
+                                  ),
+                                  Text(
+                                    tDashbaordBannerTitle1,
+                                    style: Theme.of(context).textTheme.bodyLarge,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                  Text(
+                                    tDashbaordBannerSubTitle,
+                                    style: Theme.of(context).textTheme.bodyMedium,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                  )
+                                ],
+                              ),
+                            ),
+                            SizedBox(
+                                width: double.infinity,
+                                child: OutlinedButton(
+                                    onPressed: () {},
+                                    child: Text(tDashbaordButton))),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
+
+//TOPcourses
+                  Text(tDashbaordTopCourses,
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineSmall
+                          ?.apply(fontSizeFactor: 1.2)),
+
                 ],
               ),
-              Banners(),
-//TOPcourses
-              Text(tDashbaordTopCourses,
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineSmall
-                      ?.apply(fontSizeFactor: 1.2)),
-              TopCourses(),
-            ],
+            ),
           ),
-        ),
-      ),
-    ));
+        ));
   }
 }
